@@ -110,23 +110,33 @@ This runs your function across threads with a built-in progress bar. No need to 
 
 ✅ Looks cool while running
 
-### 6. anyio – Async Done Right (And Sanely)
+### 6. anyio – Async Done Right (and Sanely)
 
-Okay, I’ll say it: Python’s async ecosystem is confusing as hell. asyncio, trio, curio — it’s a lot.
+Okay, I'll say it: Python's async ecosystem is confusing as hell. asyncio, trio, curio—it's a lot.
 
-anyio is a compatibility layer that lets you write async code that just works across libraries. If you’re tired of event loop errors and coroutine nightmares, this is for you.
+**anyio** is a compatibility layer that lets you write async code that works seamlessly across different async frameworks. If you're tired of dealing with event-loop headaches and coroutine nightmares, this one's for you.
+
+Here's a simple example to get you started:
 
 ```python
 import anyio
 
-async def do_work():
+async def worker(task_id):
+    print(f"Task {task_id} starting")
+    await anyio.sleep(1)
+    print(f"Task {task_id} done")
+
+async def main():
     async with anyio.create_task_group() as tg:
-        tg.start_soon(some_async_function)
+        for i in range(5):
+            tg.start_soon(worker, i)
+
+anyio.run(main)
 ```
 
-It’s what I reach for when I want structured concurrency and proper task cancellation without losing my sanity.
+It’s my go-to for structured concurrency and clean task cancellation—without losing my sanity.
 
-🚀 Performance tip: Combine anyio + httpx + tenacity for a battle-tested async stack.
+🚀 Performance Tip: Pair anyio with httpx and tenacity for a robust, production-ready async stack.
 
 ### 7. deepdiff – Detect All the Tiny Differences
 
