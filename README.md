@@ -1,6 +1,6 @@
 # Interesting python libraries with samples
 
-[Try this code samples at replit](https://replit.com/@jmarcini/python-libs)
+<a href="https://replit.com/@jmarcini/python-libs" target="_blank">Try these code samples at Replit</a>
 
 ### 1. boltons – Batteries You Didn’t Know Were Missing
 
