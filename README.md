@@ -150,7 +150,7 @@ You ever pass a dict to a function and accidentally mutate it? Immutable data st
 
 pyrsistent gives you persistent data types: PMap, PVector, etc. — functional, thread-safe, and lightning fast.
 
-```
+```python
 from pyrsistent import pmap
 
 original = pmap({'a': 1})
