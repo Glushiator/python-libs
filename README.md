@@ -72,7 +72,7 @@ You ever deal with nested JSON from APIs that look like:
 
 Enter glom.
 
-```
+```python
 from glom import glom
 
 data = {
@@ -105,7 +105,9 @@ results = thread_map(process, range(100), max_workers=10)
 This runs your function across threads with a built-in progress bar. No need to wire up concurrent.futures manually.
 
 ✅ Fast
+
 ✅ Thread-safe
+
 ✅ Looks cool while running
 
 ### 6. anyio – Async Done Right (And Sanely)
@@ -130,6 +132,7 @@ It’s what I reach for when I want structured concurrency and proper task cance
 
 Comparing two Python objects should be easy. Until you need to compare dicts with nested lists and subtle changes.
 
+```python
 from deepdiff import DeepDiff
 
 d1 = {"a": 1, "b": {"x": 10, "y": 20}}
@@ -137,14 +140,17 @@ d2 = {"a": 1, "b": {"x": 15, "y": 20}}
 
 print(DeepDiff(d1, d2))
 # {'values_changed': {"root['b']['x']": {'new_value': 15, 'old_value': 10}}}
+```
 
 Why I use it: Debugging config changes, testing APIs, or writing unittests where precision matters. It saves hours of manual comparison.
-8. pyrsistent – Immutable Data Structures That Actually Work
+
+### 8. pyrsistent – Immutable Data Structures That Actually Work
 
 You ever pass a dict to a function and accidentally mutate it? Immutable data structures fix that.
 
 pyrsistent gives you persistent data types: PMap, PVector, etc. — functional, thread-safe, and lightning fast.
 
+```
 from pyrsistent import pmap
 
 original = pmap({'a': 1})
@@ -152,30 +158,38 @@ modified = original.set('b', 2)
 
 print(original)  
 print(modified)  
+```
 
 No weird side effects, no shared state bugs. Just clean, immutable goodness.
 
 It’s inspired by Clojure’s data model and has been used in production systems for years.
-9. structlog – Logs That Aren’t Garbage
+
+### 9. structlog – Logs That Aren’t Garbage
 
 Let’s be honest: most logs are noise. structlog helps you write logs that are structured, parseable, and (finally) useful.
 
+```python
 import structlog
 
 log = structlog.get_logger()
 log.info("user_logged_in", user_id=42)
+```
 
 This outputs logs as dictionaries, so you can pipe them to log aggregators like ELK, Datadog, or just grep them without losing your mind.
 
 Why it matters: Because in 2025, log readability is not optional — it’s critical.
-10. pyinstrument – Profile First, Optimize Later
+
+### 10. pyinstrument – Profile First, Optimize Later
 
 Trying to speed up your code? pyinstrument gives you a flamegraph-style profiler with beautiful output and zero setup.
 
+```shell
 pyinstrument my_script.py
+```
 
 Or use in code:
 
+```python
 from pyinstrument import Profiler
 
 profiler = Profiler()
@@ -183,17 +197,9 @@ profiler.start()
 
 profiler.stop()
 print(profiler.output_text(unicode=True, color=True))
+```
 
 It shows you where your time is really going — not just function call counts, but wall-time slices.
 
 Why it’s a game-changer: I found a rogue regex function taking 40% of execution time. In production. This tool paid for itself in 30 seconds.
 Thank you for being a part of the community
-
-Before you go:
-
-    Be sure to clap and follow the writer ️👏️️
-    Follow us: X | LinkedIn | YouTube | Newsletter | Podcast | Twitch
-    Start your own free AI-powered blog on Differ 🚀
-    Join our content creators community on Discord 🧑🏻‍💻
-    For more content, visit plainenglish.io + stackademic.com
-
