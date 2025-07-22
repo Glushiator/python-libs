@@ -203,3 +203,69 @@ It shows you where your time is really going — not just function call counts, 
 
 Why it’s a game-changer: I found a rogue regex function taking 40% of execution time. In production. This tool paid for itself in 30 seconds.
 Thank you for being a part of the community
+
+### 11. typer – Beautiful CLI Apps with Minimal Effort
+
+Building command-line interfaces shouldn't be complicated. With Typer, you turn Python functions into CLI apps effortlessly—powered by type hints and rich automatic documentation.
+
+```python
+import typer
+
+def main(name: str, count: int = 1):
+    for _ in range(count):
+        print(f"Hello, {name}!")
+
+if __name__ == "__main__":
+    typer.run(main)
+# Usage: python app.py Marcin --count 3
+```
+
+---
+
+### 12. pydantic – Data Validation Made Simple
+
+Ever struggled to validate and parse input data cleanly? Pydantic uses Python type annotations to simplify model validation, ensuring data correctness and integrity—no headaches needed.
+
+```python
+from pydantic import BaseModel, EmailStr
+
+class User(BaseModel):
+    name: str
+    email: EmailStr
+
+user = User(name="Marcin", email="marcin@example.com")
+print(user.model_dump())
+# Output: {'name': 'Marcin', 'email': 'marcin@example.com'}
+```
+
+---
+
+### 13. loguru – Next-Level Python Logging
+
+Tired of Python's verbose logging setup? Loguru simplifies logging with intuitive configuration, automatic formatting, and effortless file management. Logging as it should've always been.
+
+```python
+from loguru import logger
+
+logger.add("debug.log", level="DEBUG")
+
+logger.info("Hello, Marcin!")
+logger.debug("Debugging details here.")
+```
+
+---
+
+### 14. rich – Stunning Terminal Formatting and UI
+
+Plain console output getting boring? Rich transforms your terminal apps with beautiful text formatting, progress bars, and advanced visualizations—making your CLI feel alive.
+
+```python
+from rich import print
+from rich.progress import track
+import time
+
+print("[bold magenta]Hello, Marcin![/bold magenta]")
+
+for step in track(range(10), description="Processing..."):
+    time.sleep(0.1)
+```
