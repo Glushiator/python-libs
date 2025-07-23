@@ -310,9 +310,9 @@ If you love the convenience of dataclasses but need more power, `attrs` gives
 you declarative class definitions with tons of flexibility.
 
 ```python
-import attrs
+import attr
 
-@attrs.define
+@attr.define
 class Point:
     x: float
     y: float
