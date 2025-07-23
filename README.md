@@ -2,7 +2,7 @@
 
 [Try these code samples at Replit](https://replit.com/@jmarcini/python-libs)
 
-### 1. boltons – Batteries You Didn’t Know Were Missing
+### 1. [boltons](https://pypi.org/project/boltons/) – Batteries You Didn’t Know Were Missing
 
 You know how the standard library almost has everything, but not quite? Enter boltons.
 
@@ -16,7 +16,7 @@ for group in chunked(range(10), 3):
 # Output: [0, 1, 2], [3, 4, 5], [6, 7, 8], [9]
 ```
 
-### 2. tenacity – Retry Until It Works (Or You Rage Quit)
+### 2. [tenacity](https://pypi.org/project/tenacity/) – Retry Until It Works (Or You Rage Quit)
 
 Network request failed? API rate-limited? External dependency throwing a tantrum?
 
@@ -35,7 +35,7 @@ fragile_function()
 
 It retries failed functions with customizable backoff logic. And yes, it can handle async functions too.
 
-### 3. diskcache – When You Want Cache but Hate Complexity
+### 3. [diskcache](https://pypi.org/project/diskcache/) – When You Want Cache but Hate Complexity
 
 Look, I love functools.lru_cache. But sometimes I need my cache to persist across runs, or not disappear the moment my script ends.
 
@@ -57,7 +57,7 @@ print(expensive_calc(10))
 
 No Redis, no Docker, no nonsense. Just local caching that works.
 
-### 4. glom – The Data Access Toolkit You Didn’t Know You Needed
+### 4. [glom](https://pypi.org/project/glom/) – The Data Access Toolkit You Didn’t Know You Needed
 
 You ever deal with nested JSON from APIs that look like:
 
@@ -92,7 +92,7 @@ Read that again. That’s one line to traverse arbitrarily nested structures.
 
 Why I keep using it: When working with APIs, scraping, or messy configs, this library turns pain into poetry.
 
-### 5. tqdm.contrib.concurrent – Multi-Threaded Progress Bars, Finally
+### 5. [tqdm.contrib.concurrent](https://pypi.org/project/tqdm/) – Multi-Threaded Progress Bars, Finally
 
 You probably already use tqdm for progress bars. But did you know it comes with an underused concurrent module?
 
@@ -114,7 +114,7 @@ This runs your function across threads with a built-in progress bar. No need to 
 
 ✅ Looks cool while running
 
-### 6. anyio – Async Done Right (and Sanely)
+### 6. [anyio](https://pypi.org/project/anyio/) – Async Done Right (and Sanely)
 
 Okay, I'll say it: Python's async ecosystem is confusing as hell. asyncio, trio, curio—it's a lot.
 
@@ -142,7 +142,7 @@ It’s my go-to for structured concurrency and clean task cancellation—without
 
 🚀 Performance Tip: Pair anyio with httpx and tenacity for a robust, production-ready async stack.
 
-### 7. deepdiff – Detect All the Tiny Differences
+### 7. [deepdiff](https://pypi.org/project/deepdiff/) – Detect All the Tiny Differences
 
 Comparing two Python objects should be easy. Until you need to compare dicts with nested lists and subtle changes.
 
@@ -158,7 +158,7 @@ print(DeepDiff(d1, d2))
 
 Why I use it: Debugging config changes, testing APIs, or writing unittests where precision matters. It saves hours of manual comparison.
 
-### 8. pyrsistent – Immutable Data Structures That Actually Work
+### 8. [pyrsistent](https://pypi.org/project/pyrsistent/) – Immutable Data Structures That Actually Work
 
 You ever pass a dict to a function and accidentally mutate it? Immutable data structures fix that.
 
@@ -178,7 +178,7 @@ No weird side effects, no shared state bugs. Just clean, immutable goodness.
 
 It’s inspired by Clojure’s data model and has been used in production systems for years.
 
-### 9. structlog – Logs That Aren’t Garbage
+### 9. [structlog](https://pypi.org/project/structlog/) – Logs That Aren’t Garbage
 
 Let’s be honest: most logs are noise. structlog helps you write logs that are structured, parseable, and (finally) useful.
 
@@ -193,7 +193,7 @@ This outputs logs as dictionaries, so you can pipe them to log aggregators like 
 
 Why it matters: Because in 2025, log readability is not optional — it’s critical.
 
-### 10. pyinstrument – Profile First, Optimize Later
+### 10. [pyinstrument](https://pypi.org/project/pyinstrument/) – Profile First, Optimize Later
 
 Trying to speed up your code? pyinstrument gives you a flamegraph-style profiler with beautiful output and zero setup.
 
@@ -218,7 +218,7 @@ It shows you where your time is really going — not just function call counts, 
 Why it’s a game-changer: I found a rogue regex function taking 40% of execution time. In production. This tool paid for itself in 30 seconds.
 Thank you for being a part of the community
 
-### 11. typer – Beautiful CLI Apps with Minimal Effort
+### 11. [typer](https://pypi.org/project/typer/) – Beautiful CLI Apps with Minimal Effort
 
 Building command-line interfaces shouldn't be complicated. With Typer, you turn Python functions into CLI apps effortlessly—powered by type hints and rich automatic documentation.
 
@@ -236,7 +236,7 @@ if __name__ == "__main__":
 
 ---
 
-### 12. pydantic – Data Validation Made Simple
+### 12. [pydantic](https://pypi.org/project/pydantic/) – Data Validation Made Simple
 
 Ever struggled to validate and parse input data cleanly? Pydantic uses Python type annotations to simplify model validation, ensuring data correctness and integrity—no headaches needed.
 
@@ -254,7 +254,7 @@ print(user.model_dump())
 
 ---
 
-### 13. loguru – Next-Level Python Logging
+### 13. [loguru](https://pypi.org/project/loguru/) – Next-Level Python Logging
 
 Tired of Python's verbose logging setup? Loguru simplifies logging with intuitive configuration, automatic formatting, and effortless file management. Logging as it should've always been.
 
@@ -269,7 +269,7 @@ logger.debug("Debugging details here.")
 
 ---
 
-### 14. rich – Stunning Terminal Formatting and UI
+### 14. [rich](https://pypi.org/project/rich/) – Stunning Terminal Formatting and UI
 
 Plain console output getting boring? Rich transforms your terminal apps with beautiful text formatting, progress bars, and advanced visualizations—making your CLI feel alive.
 
@@ -284,7 +284,7 @@ for step in track(range(10), description="Processing..."):
     time.sleep(0.1)
 ```
 
-### 15. httpx – Async-Aware HTTP Requests
+### 15. [httpx](https://pypi.org/project/httpx/) – Async-Aware HTTP Requests
 
 Requests is great, but `httpx` is what you want for modern async or sync HTTP
 clients. It shares a very similar API, so you can drop it in with minimal fuss.
@@ -304,7 +304,7 @@ if __name__ == "__main__":
 
 ---
 
-### 16. attrs – Declarative Class Components
+### 16. [attrs](https://pypi.org/project/attrs/) – Declarative Class Components
 
 If you love the convenience of dataclasses but need more power, `attrs` gives
 you declarative class definitions with tons of flexibility.
@@ -322,7 +322,7 @@ print(Point(1.5, 2.5))
 
 ---
 
-### 17. pendulum – Datetimes Without the Headaches
+### 17. [pendulum](https://pypi.org/project/pendulum/) – Datetimes Without the Headaches
 
 Time zone handling can be rough. `pendulum` builds on Python's `datetime` with a
 friendlier API and better time zone support.
