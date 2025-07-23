@@ -283,3 +283,49 @@ print("[bold magenta]Hello, Marcin![/bold magenta]")
 for step in track(range(10), description="Processing..."):
     time.sleep(0.1)
 ```
+
+### 15. httpx – Async-Aware HTTP Requests
+
+Requests is great, but `httpx` is what you want for modern async or sync HTTP
+clients. It shares a very similar API, so you can drop it in with minimal fuss.
+
+```python
+import httpx
+
+async def fetch_example():
+    async with httpx.AsyncClient() as client:
+        response = await client.get("https://example.com")
+        print(response.status_code)
+```
+
+---
+
+### 16. attrs – Declarative Class Components
+
+If you love the convenience of dataclasses but need more power, `attrs` gives
+you declarative class definitions with tons of flexibility.
+
+```python
+import attrs
+
+@attrs.define
+class Point:
+    x: float
+    y: float
+
+print(Point(1.5, 2.5))
+```
+
+---
+
+### 17. pendulum – Datetimes Without the Headaches
+
+Time zone handling can be rough. `pendulum` builds on Python's `datetime` with a
+friendlier API and better time zone support.
+
+```python
+import pendulum
+
+dt = pendulum.parse("2025-05-01T12:34:56Z")
+print(dt.in_timezone("Europe/Warsaw"))
+```
