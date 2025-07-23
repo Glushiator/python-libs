@@ -291,11 +291,15 @@ clients. It shares a very similar API, so you can drop it in with minimal fuss.
 
 ```python
 import httpx
+import asyncio
 
 async def fetch_example():
     async with httpx.AsyncClient() as client:
         response = await client.get("https://example.com")
         print(response.status_code)
+
+if __name__ == "__main__":
+    asyncio.run(fetch_example())
 ```
 
 ---
